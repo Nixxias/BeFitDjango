@@ -1,0 +1,82 @@
+[
+  {
+    "model": "workout.ExerciseType",
+    "pk": 1,
+    "fields": {
+      "name": "Cardio",
+      "description": "Bieganie, rower, pływanie - poprawa kondycji"
+    }
+  },
+  {
+    "model": "workout.ExerciseType",
+    "pk": 2,
+    "fields": {
+      "name": "Siłowe",
+      "description": "Trening z ciężarami lub na maszynach"
+    }
+  },
+  {
+    "model": "workout.ExerciseType",
+    "pk": 3,
+    "fields": {
+      "name": "Joga",
+      "description": "Balans, rozciąganie i wyciszenie"
+    }
+  },
+  {
+    "model": "workout.ExerciseType",
+    "pk": 4,
+    "fields": {
+      "name": "HIIT",
+      "description": "Trening interwałowy o wysokiej intensywności"
+    }
+  },
+  {
+    "model": "workout.ExerciseType",
+    "pk": 5,
+    "fields": {
+      "name": "Kalistenika",
+      "description": "Trening z wykorzystaniem masy własnego ciała"
+    }
+  },
+  {
+    "model": "workout.ExerciseType",
+    "pk": 6,
+    "fields": {
+      "name": "Pilates",
+      "description": "Wzmacnianie mięśni głębokich i kręgosłupa"
+    }
+  },
+  {
+    "model": "workout.ExerciseType",
+    "pk": 7,
+    "fields": {
+      "name": "CrossFit",
+      "description": "Trening funkcjonalny o zmiennej intensywności"
+    }
+  },
+  {
+    "model": "workout.ExerciseType",
+    "pk": 8,
+    "fields": {
+      "name": "Stretching",
+      "description": "Rozciąganie poprawiające elastyczność"
+    }
+  },
+  {
+    "model": "workout.ExerciseType",
+    "pk": 9,
+    "fields": {
+      "name": "Sporty walki",
+      "description": "Boks, kickboxing, MMA, judo"
+    }
+  },
+  {
+    "model": "workout.ExerciseType",
+    "pk": 10,
+    "fields": {
+      "name": "Taniec / Zumba",
+      "description": "Aktywność fizyczna w rytm muzyki"
+    }
+  }
+]

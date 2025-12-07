@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Wykonane ćwiczenia</h2>
+<a href="{% url 'performed-add' %}">Dodaj wykonane ćwiczenie</a>
+<ul>
+  {% for p in performed %}
+    <li>{{ p.session.start }} — {{ p.exercise_type.name }}: {{ p.sets }}x{{ p.reps }} @ {{ p.load }}kg
+        <a href="{% url 'performed-edit' p.pk %}">Edytuj</a>
+        <form method="post" action="{% url 'performed-delete' p.pk %}" style="display:inline">{% csrf_token %}<button>Usuń</button></form>
+    </li>
+  {% empty %}<li>Brak zapisanych ćwiczeń.</li>{% endfor %}
+</ul>
+{% endblock %}

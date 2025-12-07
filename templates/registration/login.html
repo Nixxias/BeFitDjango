@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center align-items-center" style="min-height: 60vh;">
+  <div class="col-md-5 col-lg-4">
+    <div class="card shadow-lg border-0 rounded-lg">
+      <div class="card-header bg-primary text-white text-center py-3">
+        <h3 class="fw-light my-1">Zaloguj się</h3>
+      </div>
+      <div class="card-body p-4">
+        
+        <form method="post" action="{% url 'login' %}">
+          {% csrf_token %}
+          
+          {% if form.errors %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>Błąd!</strong> Nieprawidłowa nazwa użytkownika lub hasło.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endif %}
+
+          <div class="form-floating mb-3">
+            <input type="text" name="username" class="form-control" id="id_username" placeholder="Nazwa użytkownika" required autofocus>
+            <label for="id_username">Nazwa użytkownika</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="password" name="password" class="form-control" id="id_password" placeholder="Hasło" required>
+            <label for="id_password">Hasło</label>
+          </div>
+
+          <div class="d-grid mt-4">
+            <button type="submit" class="btn btn-primary btn-lg">Wejdź</button>
+          </div>
+          
+          <input type="hidden" name="next" value="{{ next }}">
+        </form>
+      </div>
+      <div class="card-footer text-center py-3">
+        <div class="small"><a href="#" class="text-muted">Zapomniałeś hasła?</a></div>
+        <div class="small"><a href="{% url 'register' %}" class="text-primary">Nie masz konta? Zarejestruj się</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

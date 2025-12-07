@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Typy ćwiczeń</h2>
+<ul>
+  {% for t in types %}
+    <li>{{ t.name }}{% if t.description %} — <small>{{ t.description }}</small>{% endif %}
+      {% if user.is_staff %} - <a href="{% url 'exercise-type-edit' t.pk %}">Edytuj</a>{% endif %}
+    </li>
+  {% empty %}<li>Brak typów ćwiczeń.</li>{% endfor %}
+</ul>
+{% endblock %}

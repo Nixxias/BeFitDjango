@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Moje sesje treningowe</h2>
+<a href="{% url 'session-add' %}">Dodaj sesję</a>
+<ul>
+  {% for s in sessions %}
+    <li>{{ s.start }} — {{ s.end }} <a href="{% url 'session-edit' s.pk %}">Edytuj</a>
+        <form method="post" action="{% url 'session-delete' s.pk %}" style="display:inline">{% csrf_token %}<button>Usuń</button></form>
+    </li>
+  {% empty %}<li>Brak sesji.</li>{% endfor %}
+</ul>
+{% endblock %}

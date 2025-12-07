@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Statystyki (ostatnie 4 tygodnie)</h2>
+<p>Liczba sesji w okresie: {{ sessions_count }}</p>
+<table border="1" cellpadding="6">
+  <tr><th>Ćwiczenie</th><th>Ile razy</th><th>Łączne powtórzenia</th><th>Średnie obciążenie (kg)</th><th>Maksymalne obciążenie (kg)</th></tr>
+  {% for s in stats %}
+    <tr>
+      <td>{{ s.exercise_type__name }}</td>
+      <td>{{ s.times }}</td>
+      <td>{{ s.total_reps }}</td>
+      <td>{{ s.avg_load|floatformat:2 }}</td>
+      <td>{{ s.max_load|floatformat:2 }}</td>
+    </tr>
+  {% empty %}
+    <tr><td colspan="5">Brak danych w ostatnich 4 tygodniach.</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}
